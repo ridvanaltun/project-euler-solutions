@@ -1,20 +1,28 @@
+import time
+start = time.time()
+
 count = 0
 say= 0
-asal = False
+prime = False
 
 while True:
 	say = say + 1
-	for i in range(2,say):
-		if say % i ==0:
-			asal = False
-			#print("say = "+str(say)+" i = "+str(i))
+	for i in range(3,say,2):
+		if say % i ==0 or say % 2 == 0:
+			prime = False
 			break
 		else:
-			asal=True
-	if asal:
+			prime = True
+			
+	if prime:
 		count = count + 1
-		asal = False
 
-		if(count == 10001-1): # -1 var cunku 2 asal oldugu halde dongude yok
+		if(count == 10001-2): # 2 ve 3 rakamları asal olarak alınmadığı için 2 geri gittik
 			print(say)
 			break
+
+elapsed = (time.time() - start)
+print("This code took: " + str(elapsed) + " seconds")
+
+# old -> 89.22042536735535 seconds
+# new -> 66.05653405189514 seconds
