@@ -1,7 +1,7 @@
 """
 # Buradaki algoritmanın adı Trial Division
 # Yazması ve anlaması çok kolay ancak çalışma hızı berbat^1000
-# Muhtemelen cevabı bulmak saatler, hatta günler sürer
+# Muhtemelen cevabı bulmak saatler hatta günler sürer
 
 num = 2000000
 sum = 0
@@ -25,12 +25,12 @@ print(sum+2+3) # 2 ve 3 asal oldugu halde donguye girmedigi icin eklendi
 """
 # Erotosten Kalburu adlı bir algoritma kullandım
 # Kısaca asal sayıların katlarını bir listeden eleyerek listeyi daraltıyoruz
-# Daha karmaşık ama daha hızlı olsan bir algirtma daha varmış: Atkin Kalburu
+# Karmaşık ama daha hızlı bir algoritma daha varmış: Atkin Kalburu
 
 + 2000000 elemanlı, tüm elemanları true olan bir liste oluştur
 + 2 den başlayıp 2000000 kez dönen bir döngü oluştur
-+ eğer liste[i] true ise asaldır, topla
-+ sonrasında asal sayının katlarını liste üstünde false'a çevir
++ Eğer liste[i] true ise i elemanı asal bir sayıdır, topla
++ Sonrasında asal sayının katlarını liste üstünde false'a çevir
 """
 
 import time
