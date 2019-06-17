@@ -29,22 +29,24 @@ count = 0
 
 while True:
 
-	for y in range(count,digitCount+count):
-		sum = sum * int(num[y])
-		#print(str(sum) + " * " + str(num[y]) + " // count = "+str(count))
-		if num[y] == 0 or sum == 0: # garip bir sekilde sum degiskeni 0 olabiliyor
-			break
+    for y in range(count, digitCount + count):
+        sum = sum * int(num[y])
+        # print(str(sum) + " * " + str(num[y]) + " // count = "+str(count))
 
-	if sum > maxProduct:
-		maxProduct = sum
-	else:
-		pass
+        # garip bir sekilde sum degiskeni 0 olabiliyor
+        if num[y] == 0 or sum == 0:
+            break
 
-	sum=1
-	count = count + 1
+    if sum > maxProduct:
+        maxProduct = sum
+    else:
+        pass
 
-	if(count == len(num) - digitCount):
-		break
+    sum = 1
+    count = count + 1
+
+    if(count == len(num) - digitCount):
+        break
 
 print(maxProduct)
 
@@ -53,6 +55,6 @@ print(maxProduct)
 Method:
 
 num degiskeni içindeki her karakter için sırayla 13 karakter alıp çarpacak
-count = 986 olunca duracak cunku 986 + 13 -> 999 , yani devam ederse liste disina cikar
+count = 986 olunca duracak cunku 986 + 13 = 999 devam ederse liste disina cikar
 
 """

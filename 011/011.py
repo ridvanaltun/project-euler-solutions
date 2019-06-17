@@ -25,45 +25,47 @@ num = """
 
 num = num.split()
 
-for i in range(0,len(num)):
-	if num[i][:1] == '0':
-		num[i] = num[i][-1:]
+for i in range(0, len(num)):
+    if num[i][:1] == '0':
+        num[i] = num[i][-1:]
 
 
 matris = [[0 for x in range(20)] for x in range(20)]
 say = 0
 
-for i in range(0,20):
-	for j in range(0,20):
-		matris[i][j] = int(num[say])
-		say = say + 1
+for i in range(0, 20):
+    for j in range(0, 20):
+        matris[i][j] = int(num[say])
+        say = say + 1
 
 _max, yatay, dikey, capraz, tcapraz = 0, 1, 1, 1, 1
 
-for i in range(0,20):
-	for j in range(0,17):
-		for k in range(0,4):
-			yatay = yatay * matris[i][j+k]
-			dikey = dikey * matris[j+k][i]
+for i in range(0, 20):
+    for j in range(0, 17):
+        for k in range(0, 4):
+            yatay = yatay * matris[i][j + k]
+            dikey = dikey * matris[j + k][i]
 
-			if i<=16:
-				capraz = capraz * matris[i+k][j+k] # dizi soldan saga dogru kayiyor, asagi saga dogru kayiyor
+            if i <= 16:
+                # dizi soldan saga dogru kayiyor, asagi saga dogru kayiyor
+                capraz = capraz * matris[i + k][j + k]
 
-			tcapraz = tcapraz * matris[i-k][j+k] # dizi soldan saga kayiyor, asagi sola dogru kayiyor
-											
-		if yatay > _max:
-			_max = yatay
-		elif dikey > _max:
-			_max = dikey
-		elif capraz > _max:
-			_max = capraz
-		elif tcapraz > _max:
-			_max = tcapraz
+            # dizi soldan saga kayiyor, asagi sola dogru kayiyor
+            tcapraz = tcapraz * matris[i - k][j + k]
 
-		yatay = 1
-		dikey = 1
-		capraz = 1
-		tcapraz = 1
+        if yatay > _max:
+            _max = yatay
+        elif dikey > _max:
+            _max = dikey
+        elif capraz > _max:
+            _max = capraz
+        elif tcapraz > _max:
+            _max = tcapraz
+
+        yatay = 1
+        dikey = 1
+        capraz = 1
+        tcapraz = 1
 
 print(_max)
 
@@ -75,11 +77,16 @@ Adımlar:
 
 İlk olarak elimizdeki veriyi kullanılabilir hale getirmek gerekiyor:
 
-Bize verilen string'i split() methodu ile bir listeye aktarıyoruz: Böylelikle artık tüm elemanları bir listeye indirmiş olduk.
-Listedeki tüm elemanları elden geçirip başlarında sıfır varsa eğer, başlarındaki sıfırı siliyoruz.
+Bize verilen string'i split() methodu ile bir listeye aktarıyoruz:
+Böylelikle artık tüm elemanları bir listeye indirmiş olduk.
+
+Listedeki tüm elemanları elden geçirip başlarında sıfır varsa;
+Başlarındaki sıfırı siliyoruz.
+
 İleride kare matris işlevi görecek bir liste açıyoruz.
 Elimizdeki tüm elemanları integer'a çevirerek kare matris içine atıyoruz.
 
-Geri kalan algoritma'da tüm veriler: Yatay, dikey, çapraz ve ters çapraz olarak taranıyor.
+Geri kalan algoritma'da tüm veriler:
+Yatay, dikey, çapraz ve ters çapraz olarak taranıyor.
 
 """

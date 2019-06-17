@@ -6,48 +6,49 @@ amicable = []
 
 while True:
 
-	num = num + 1
+    num = num + 1
 
-	for x in range(1,num):
+    for x in range(1, num):
 
-		if num % x == 0:
-			a += x
-			
-	# print("A = "+ str(a))
+        if num % x == 0:
+            a += x
 
-	for t in range(1,a):
+    # print("A = "+ str(a))
 
-		if a % t == 0:
-			b += t
-			
-	# print("B = " +str(b))
+    for t in range(1, a):
 
-	for r in range(1,b):
+        if a % t == 0:
+            b += t
 
-		if b % r == 0:
-			c += r
+    # print("B = " +str(b))
 
-	# print("C = " +str(c))
+    for r in range(1, b):
 
-	# a ile c yi karşılaştırıp a ile b yi topluyoruz
-	# a != b çünkü 6, 28 gibi sayılar amicable number sayılmıyor kendinlerini tekrar ettikleri için
+        if b % r == 0:
+            c += r
 
-	if a == c and a != b:
+    # print("C = " +str(c))
 
-		if a>10000 or b>10000:
-			break
+    # a ile c yi karşılaştırıp a ile b yi topluyoruz
+    # a != b çünkü 6, 28 gibi sayılar amicable number sayılmıyor kendinlerini
+    # tekrar ettikleri için
 
-		amicable.append(a)
-		amicable.append(b)
+    if a == c and a != b:
 
-		total = total + a + b
-		
+        if a > 10000 or b > 10000:
+            break
 
-	a = 0
-	b = 0
-	c = 0
+        amicable.append(a)
+        amicable.append(b)
 
-amicable = list(set(amicable)) #bazı değerler kendini tekrarlıyor, bu yüzden dublicate değerleri kullanmıyoruz
+        total = total + a + b
+
+    a = 0
+    b = 0
+    c = 0
+
+# bazı değerler kendini tekrarlıyor, dublicate değerleri kullanmıyoruz
+amicable = list(set(amicable))
 print(sum(amicable))
 
 elapsed = (time.time() - start)

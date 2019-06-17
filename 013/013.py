@@ -101,6 +101,6 @@ num = """
 53503534226472524250874054075591789781264330331690
 """
 
-num = map(int,num.split())
+num = map(int, num.split())
 
 print(str(sum(num))[:10])

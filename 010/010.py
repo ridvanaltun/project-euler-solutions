@@ -9,15 +9,15 @@ prime = False
 
 for i in range(3,num,2):
 
-	for j in range(3,i):
-		if i % j == 0:
-			prime = False
-			break
-		else:
-			prime = True
+    for j in range(3,i):
+        if i % j == 0:
+            prime = False
+            break
+        else:
+            prime = True
 
-	if prime:
-		sum = sum + i
+    if prime:
+        sum = sum + i
 
 print(sum+2+3) # 2 ve 3 asal oldugu halde donguye girmedigi icin eklendi
 """
@@ -40,11 +40,12 @@ num = 2000000
 list = [True] * num
 sum = 0
 
-for i in range(2,num):
-	if list[i]:
-		sum = sum + i
-		for j in range(i*i,num,i):
-			list[j] = False
+for i in range(2, num):
+    if list[i]:
+        sum = sum + i
+        for j in range(i * i, num, i):
+            list[j] = False
+
 print(sum)
 
 elapsed = (time.time() - start)
